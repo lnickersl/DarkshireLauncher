@@ -1,5 +1,6 @@
 package launcher.client;
 
+
 import com.eclipsesource.json.Json;
 import com.eclipsesource.json.JsonObject;
 import com.eclipsesource.json.WriterConfig;
@@ -120,7 +121,18 @@ public final class ClientLauncher
         }
 
         // A fucking shitty fix
-        args.add(jvmProperty(JVMHelper.JAVA_LIBRARY_PATH, params.clientDir.resolve(NATIVES_DIR).toString()));
+        Path nativesRootDir = params.clientDir.resolve(NATIVES_DIR);
+        Path nativesOsArchDir = nativesRootDir.resolve(JVMHelper.OS_TYPE.name).resolve(JVMHelper.ARCH_TYPE.name);
+        String nativesDir;
+
+        if (!Files.isDirectory(nativesOsArchDir)) {
+            nativesDir = nativesRootDir.toString();
+        } else {
+            nativesDir = nativesOsArchDir.toString();
+        }
+
+        LogHelper.debug("Natives folder: " + nativesDir);
+        args.add(jvmProperty(JVMHelper.JAVA_LIBRARY_PATH, nativesDir));
 
         // Add classpath and main class
         Collections.addAll(args, profile.object.getJvmArgs());
