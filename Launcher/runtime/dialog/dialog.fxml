@@ -7,31 +7,64 @@
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.web.WebView?>
 
-<Pane xmlns:fx="http://javafx.com/fxml/1" fx:id="layout" prefWidth="600.0" prefHeight="400.0">
+<Pane fx:id="layout" prefHeight="756.0" prefWidth="1209.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
     <stylesheets>
         <URL value="@dialog.css" />
     </stylesheets>
+   <ImageView fitHeight="756.0" fitWidth="1209.0">
+      <image>
+         <Image url="@2023-09-19_13.18.58.png" />
+      </image>
+   </ImageView>
+   <ImageView fitHeight="350.0" fitWidth="347.0" layoutY="117.0">
+      <image>
+         <Image url="@Zastavka_Darkshir%20(1).png" />
+      </image>
+   </ImageView>
 
     <!-- News web view -->
-    <WebView fx:id="news" layoutX="0.0" layoutY="0.0" prefWidth="600.0" prefHeight="315.0" />
+    <WebView fx:id="news" layoutX="343.0" layoutY="41.0" prefHeight="692.0" prefWidth="852.0" />
 
     <!-- Auth pane -->
-    <Pane fx:id="authPane" layoutX="0.0" layoutY="315.0" prefWidth="600.0" prefHeight="85.0">
+    <Pane fx:id="authPane" layoutX="-1.0" prefHeight="756.0" prefWidth="340.0">
         <!-- First row -->
-        <TextField fx:id="login" layoutX="10.0" layoutY="10.0" prefWidth="200.0" prefHeight="30.0" promptText="Логин" />
-        <PasswordField fx:id="password" layoutX="215.0" layoutY="10.0" prefWidth="200.0" prefHeight="30.0" promptText="Пароль" />
-        <Button fx:id="goAuth" layoutX="430.0" layoutY="10.0" prefWidth="125.0" prefHeight="30.0" text="Авторизация" defaultButton="true" />
-        <Button fx:id="goSettings" layoutX="560.0" layoutY="10.0" prefWidth="30.0" prefHeight="30.0" />
+        <TextField fx:id="login" layoutX="76.0" layoutY="486.0" prefHeight="30.0" prefWidth="200.0" promptText="Логин" style="-fx-background-color: faebd7;" />
+        <PasswordField fx:id="password" layoutX="76.0" layoutY="529.0" prefHeight="30.0" prefWidth="200.0" promptText="Пароль" style="-fx-background-color: faebd7;" />
+        <Button fx:id="goAuth" defaultButton="true" layoutX="113.0" layoutY="639.0" prefHeight="30.0" prefWidth="125.0" style="-fx-background-color: #013220;" text="Авторизация">
+         <font>
+            <Font name="VinqueRg-Regular" size="12.0" />
+         </font></Button>
+        <Button fx:id="goSettings" layoutX="14.0" layoutY="712.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: faebd7;" />
 
         <!-- Second row -->
-        <ComboBox fx:id="profiles" layoutX="10.0" layoutY="45.0" prefWidth="200.0" prefHeight="30.0" />
-        <CheckBox fx:id="savePassword" layoutX="220.0" layoutY="50.0" prefWidth="200.0" text="Сохранить пароль" />
-        <Hyperlink fx:id="link" layoutX="430.0" layoutY="45.0" prefWidth="160.0" prefHeight="30.0" />
+        <ComboBox fx:id="profiles" layoutX="76.0" layoutY="598.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: faebd7;" />
+        <CheckBox fx:id="savePassword" layoutX="113.0" layoutY="570.0" prefWidth="200.0" text="Сохранить пароль" />
+      <ImageView layoutX="222.0" layoutY="713.0">
+         <image>
+            <Image url="@youtube%20(2).png" />
+         </image>
+      </ImageView>
+      <ImageView layoutX="260.0" layoutY="713.0">
+         <image>
+            <Image url="@discord%20(1).png" />
+         </image>
+      </ImageView>
+      <ImageView layoutX="297.0" layoutY="713.0">
+         <image>
+            <Image url="@message.png" />
+         </image>
+      </ImageView>
+        <Hyperlink fx:id="linkvk" layoutX="297.0" layoutY="714.0" prefHeight="30.0" prefWidth="32.0" textAlignment="CENTER" />
+      <Hyperlink fx:id="linkyt" layoutX="222.0" layoutY="714.0" prefHeight="30.0" prefWidth="32.0" textAlignment="CENTER" />
+      <Hyperlink fx:id="linkds" layoutX="260.0" layoutY="714.0" prefHeight="30.0" prefWidth="32.0" textAlignment="CENTER" />
     </Pane>
 
     <!-- Overlay -->
-    <Pane fx:id="dim" layoutX="0.0" layoutY="0.0" prefWidth="600.0" prefHeight="400.0" visible="false" />
+    <Pane fx:id="dim" layoutX="0.0" layoutY="0.0" prefHeight="756.0" prefWidth="1209.0" visible="false" />
 </Pane>

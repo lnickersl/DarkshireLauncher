@@ -1,19 +1,32 @@
 // ====== LAUNCHER CONFIG ====== //
 var config = {
-    dir: ".kj-launcher", // Launcher directory
-    title: "KeeperJerry's Launcher", // Window title
+    dir: "DarkshireRP", // Launcher directory
+    title: "Darkshire RP", // Window title
     icons: [ "favicon.png" ], // Window icon paths
 
     // Auth config
-    newsURL: "https://launcher.keeperjerry.ru/", // News WebView URL
-    linkText: "Забыли пароль?", // Text for link under "Auth" button
-    linkURL: new java.net.URL("https://mirror.keeperjerry.ru/"), // URL for link under "Auth" button
+    newsURL: "https://vk.com/@darkshire-osnovnye-polozheniya", // News WebView URL
+
+    linkVk: {
+      text: "vk",
+      url: new java.net.URL("https://vk.com/darkshire"),
+    },
+    
+    linkYoutube: {
+      text: "Youtube",
+      url: new java.net.URL("https://www.youtube.com/"),
+    },
+
+    linkDiscord: {
+      text: "Discord",
+      url: new java.net.URL("https://www.google.com/"),
+    },
 
     // Settings defaults
     settingsMagic: 0xC0DE5, // Ancient magic, don't touch
     autoEnterDefault: false, // Should autoEnter be enabled by default?
     fullScreenDefault: false, // Should fullScreen be enabled by default?
-    ramDefault: 1024 // Default RAM amount (0 for auto)
+    ramDefault: 2048 // Default RAM amount (0 for auto)
 };
 
 // ====== DON'T TOUCH! ====== //
