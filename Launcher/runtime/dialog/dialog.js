@@ -55,13 +55,22 @@ function initAuthPane(pane) {
     savePasswordBox.setSelected(settings.login === null || settings.rsaPassword !== null);
 
     // Lookup hyperlink text and actions
-    var link = pane.lookup("#link");
-    link.setText(config.linkText);
-    link.setOnAction(function(event) app.getHostServices().showDocument(config.linkURL.toURI()));
+    setupLink(pane.lookup("#linkvk"), config.linkVk);
+    setupLink(pane.lookup("#linkyt"), config.linkYoutube);
+    setupLink(pane.lookup("#linkds"), config.linkDiscord);
 
     // Lookup action buttons
     pane.lookup("#goAuth").setOnAction(goAuth);
     pane.lookup("#goSettings").setOnAction(goSettings);
+}
+
+function setupLink(element, config) {
+  if (!element) throw "Link element not found";
+  var tooltip = new javafx.scene.control.Tooltip(config.text);
+  element.setTooltip(tooltip);
+  element.setOnAction(function(event) {
+    app.getHostServices().showDocument(config.url.toURI());
+  });
 }
 
 function initOffline() {
